@@ -1,11 +1,34 @@
 import React, { useState } from 'react'
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Container } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
 
-import './login.styles.css'
 const Login = () => {
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
   const [error, setError] = useState(false)
+
+
+  const MyButton = styled(Button)({
+    marginTop:"35px"
+  });
+  const MyContainer = styled(Container)({
+    width: "95%",
+    height: "300px",
+    maxWidth: "400px",
+    boxShadow: "10px 10px 74px -32px rgba(36, 166, 136, 0.53)",
+    border: "none",
+    borderRadius: "5px",
+    display: "flex",
+    flexDirection: "column",
+    padding: "30px 17px",
+  });
+  const MyWrapper = styled(Container)({
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  });
 
   const validateEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -32,9 +55,9 @@ const Login = () => {
     }
   }
   return (
-    <div id="login-wrapper">
-      <div id="login-container">
-        <h3>Se connecter</h3>
+    <MyWrapper>
+      <MyContainer>
+        <h3 style={{margin:"10px 0", textAlign:"center"}}>Se connecter</h3>
         <TextField
           error={error}
           id="email"
@@ -51,11 +74,11 @@ const Login = () => {
           type="password"
           onChange={(e)=>handleInput('password', e.target.value)}
         />
-        <Button variant="contained" id="login-button" color="primary" onClick={submit}>
+        <MyButton variant="contained" color="primary" onClick={submit}>
           Se connecter
-        </Button>
-      </div>
-    </div>
+        </MyButton>
+      </MyContainer>
+    </MyWrapper>
   )
 }
 
