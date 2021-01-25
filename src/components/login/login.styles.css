@@ -1,0 +1,18 @@
+#login-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login-wrapper #login-container{
+  width: 95%;
+  height: 300px;
+  max-width: 400px;
+  box-shadow: 10px 10px 74px -32px rgba(36, 166, 136, 0.53);
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 17px;
+}
